@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 80">
+  <style>
+    .seat { fill:#27ae60; cursor:pointer; }
+    .occupied { fill:#c0392b; }
+    text { font-family:sans-serif; font-size:12px; pointer-events:none; fill:#ffffff; }
+  </style>
+
+  <!-- 좌석 1~10을 가로로 일렬 배치 -->
+  <g id="row1">
+    <circle id="S01" data-seat="S01" class="seat" cx="35"  cy="40" r="25"/><text x="35"  y="44" text-anchor="middle">1</text>
+    <circle id="S02" data-seat="S02" class="seat" cx="90"  cy="40" r="25"/><text x="90"  y="44" text-anchor="middle">2</text>
+    <circle id="S03" data-seat="S03" class="seat" cx="145" cy="40" r="25"/><text x="145" y="44" text-anchor="middle">3</text>
+    <circle id="S04" data-seat="S04" class="seat" cx="200" cy="40" r="25"/><text x="200" y="44" text-anchor="middle">4</text>
+    <circle id="S05" data-seat="S05" class="seat" cx="255" cy="40" r="25"/><text x="255" y="44" text-anchor="middle">5</text>
+    <circle id="S06" data-seat="S06" class="seat" cx="310" cy="40" r="25"/><text x="310" y="44" text-anchor="middle">6</text>
+    <circle id="S07" data-seat="S07" class="seat" cx="365" cy="40" r="25"/><text x="365" y="44" text-anchor="middle">7</text>
+    <circle id="S08" data-seat="S08" class="seat" cx="420" cy="40" r="25"/><text x="420" y="44" text-anchor="middle">8</text>
+    <circle id="S09" data-seat="S09" class="seat" cx="475" cy="40" r="25"/><text x="475" y="44" text-anchor="middle">9</text>
+    <circle id="S10" data-seat="S10" class="seat" cx="530" cy="40" r="25"/><text x="530" y="44" text-anchor="middle">10</text>
+  </g>
+</svg>
