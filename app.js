@@ -1,6 +1,6 @@
 // app.js
 // 웹앱 URL
-const ENDPOINT = 'https://script.google.com/macros/s/AKfycbyvunGH8gUq06fB6PAGOa-G9MrMD6B9Kul2N_YI1SEBWkDgUf6idlzJ9Chu-6OK-H3N/exec';
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxbulHRyY-c97OpsSUvC8yQeXFC82KrRM8bxaC-Y_jd5tnkRZAt_Y0Kh27ck15G-8pn/exec;
 
 document.getElementById('svgMap').addEventListener('load', () => {
   const svgDoc = document.getElementById('svgMap').contentDocument;
