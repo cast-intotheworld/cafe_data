@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cafe Seats</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 1rem; text-align: center; }
+    #svgMap { width: 100%; height: auto; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h2>좌석 현황 (1 – 10)</h2>
+
+  <!-- floorplan.svg 불러오기 -->
+  <object id="svgMap" type="image/svg+xml" data="floorplan.svg"></object>
+
+  <!-- 클릭 이벤트 및 시트 기록용 스크립트 -->
+  <script src="app.js"></script>
+</body>
+</html>
