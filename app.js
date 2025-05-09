@@ -1,22 +1,25 @@
 // app.js
-// 웹앱 URL
-const ENDPOINT = 'https://script.google.com/macros/s/AKfycby3__gTPIkVHuZVKou5ZQrouaGVQRMQVQ4l0KkXgJtRJONsWZ-b34adp2Rtlw5CZM9Z/exec;
+// 웹앱 URL을 아래 따옴표 안에 붙여넣으세요.
+const ENDPOINT = 'https://script.google.com/macros/s/XXXXXXXXXXXXXXXXXXXX/exec';
 
 document.getElementById('svgMap').addEventListener('load', () => {
   const svgDoc = document.getElementById('svgMap').contentDocument;
 
   svgDoc.querySelectorAll('circle[data-seat]').forEach(circle => {
-    // 기본 색상은 빨강(not available) ─ 클릭 시 초록(available)로 토글
-  circle.addEventListener('click', () => {
-    const nowAvailable = circle.classList.toggle('available'); // 초록 ↔ 빨강
-    fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        seat: circle.id,
-        occupied: !nowAvailable   // 빨강(true) / 초록(false)
-      }),
-      mode: 'no-cors'
+    circle.addEventListener('click', () => {
+      // 색상 토글 (초록 ↔ 빨강)
+      const nowOccupied = circle.classList.toggle('occupied');
+
+      // Google Apps Script로 상태 전송
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          seat: circle.id,           // 예: "S03"
+          occupied: nowOccupied      // true = not available
+        }),
+        mode: 'no-cors'              // 응답 필요 없으므로 CORS 무시
+      });
     });
   });
 });
