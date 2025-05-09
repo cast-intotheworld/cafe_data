@@ -1,6 +1,6 @@
 // app.js
 // 웹앱 URL을 아래 따옴표 안에 붙여넣으세요.
-const ENDPOINT = 'https://script.google.com/macros/s/XXXXXXXXXXXXXXXXXXXX/exec';
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbxiFQx0AwmHEWEpFVwsYdcZQz_YnbIlkCe_53Fi6witgbylwJCvzyS78bcnYLRcMqxM/exec';
 
 document.getElementById('svgMap').addEventListener('load', () => {
   const svgDoc = document.getElementById('svgMap').contentDocument;
