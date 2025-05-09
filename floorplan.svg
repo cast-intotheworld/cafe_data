@@ -1,12 +1,13 @@
 <!-- floorplan.svg (S01–S21 + 벽 + 문, 0.8배 축소) -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -200 800 420">
   <style>
-    .seat     { fill:#27ae60; cursor:pointer; }
-    .occupied { fill:#c0392b; }
-    text      { font-family:sans-serif; font-size:12px; pointer-events:none; fill:#ffffff; }
+    /* 기본 = 빨강(not available), 클릭 시 .available 클래스가 붙어 초록 */
+    .seat       { fill:#c0392b; cursor:pointer; }  /* 빨강 */
+    .available  { fill:#27ae60; }                  /* 초록 */
+    text        { font-family:sans-serif; font-size:12px; pointer-events:none; fill:#ffffff; }
   </style>
 
-  <!-- 전체 요소 묶음: 0.8배로 축소 -->
+  <!-- 전체 요소 묶음: 0.8배 축소 -->
   <g id="all" transform="scale(0.8)">
 
     <!-- ───── 왼쪽 2×3 (S01–S06) ───── -->
