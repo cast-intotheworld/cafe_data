@@ -6,19 +6,20 @@ document.getElementById('svgMap').addEventListener('load', () => {
   const svgDoc = document.getElementById('svgMap').contentDocument;
 
   svgDoc.querySelectorAll('circle[data-seat]').forEach(circle => {
+    // 기본 색상은 빨강(not available) ─ 클릭 시 초록(available)로 토글
     circle.addEventListener('click', () => {
-      // 색상 토글 (초록 ↔ 빨강)
-      const nowOccupied = circle.classList.toggle('occupied');
+      // .available 클래스를 토글해 초록 ↔ 빨강 변경
+      const nowAvailable = circle.classList.toggle('available');  // true = 초록
 
-      // Google Apps Script로 상태 전송
+      // 스프레드시트로 전송
       fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          seat: circle.id,           // 예: "S03"
-          occupied: nowOccupied      // true = not available
+          seat: circle.id,          // 예: "S07"
+          occupied: !nowAvailable   // 빨강(true) / 초록(false)
         }),
-        mode: 'no-cors'              // 응답 필요 없으므로 CORS 무시
+        mode: 'no-cors'
       });
     });
   });
