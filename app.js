@@ -7,18 +7,18 @@ document.getElementById('svgMap').addEventListener('load', () => {
 
   svgDoc.querySelectorAll('circle[data-seat]').forEach(circle => {
     circle.addEventListener('click', () => {
-      // 색상 토글 (초록 ↔ 빨강)
-      const nowOccupied = circle.classList.toggle('occupied');
+      // 빨강(.seat) ↔ 초록(.available) 토글
+      const nowAvailable = circle.classList.toggle('available');
 
       // Google Apps Script로 상태 전송
       fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          seat: circle.id,           // 예: "S03"
-          occupied: nowOccupied      // true = not available
+          seat: circle.id,          // 예: "S03"
+          occupied: !nowAvailable   // 빨강 = not available
         }),
-        mode: 'no-cors'              // 응답 필요 없으므로 CORS 무시
+        mode: 'no-cors'
       });
     });
   });
